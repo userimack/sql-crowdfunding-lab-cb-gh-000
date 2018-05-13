@@ -3,8 +3,8 @@ id INTEGER PRIMARY KEY,
 title TEXT,
 category INTEGER,
 funding_goal INTEGER,
-start_date DATE,
-end_date DATE,
+start_date TEXT,
+end_date TEXT,
 );
 
 create table users (
