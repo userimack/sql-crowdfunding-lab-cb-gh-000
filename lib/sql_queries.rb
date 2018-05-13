@@ -7,7 +7,7 @@
 # Make sure each ruby method returns a string containing a valid SQL statement.
 
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_name
-"Select title, amount from projects pr inner join pledges pl on pr.id = pl.project_id order by pr.title; "
+"select title, x.amount from projects inner join (select sum(amount) as amount, project_id from pledges group by project_id) x on x.project_id = projects.id order by pr.title; "
 end
 
 def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
